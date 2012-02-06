@@ -64,12 +64,16 @@ typedef enum
 @property(nonatomic, assign) CGFloat width;
 @property(nonatomic, assign) CGFloat maxHeight;
 @property(nonatomic, assign) BOOL usesMessageTextView;
+@property(nonatomic, readwrite) CGSize buttonSize;
 @property(nonatomic, retain) UIImage* backgroundImage;
 @property(nonatomic, assign) TSAlertViewStyle style;
 @property(nonatomic, readonly) UITextField* inputTextField;
+@property(nonatomic, readwrite) CGFloat buttonFromTextMsgOffset;
+@property(nonatomic, readwrite) CGFloat buttonLeftOffset;
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...;
-- (NSInteger)addButtonWithTitle:(NSString *)title;
+
+- (NSInteger)addButtonWithImage:(NSString *)imageName;
 - (NSString *)buttonTitleAtIndex:(NSInteger)buttonIndex;
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated;
 - (void)show;
